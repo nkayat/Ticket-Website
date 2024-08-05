@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Lot</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="container">
+        <div class="parking-lot">
+            <div class="vehicle" id="two-wheeler">
+                <img src="download (2).jpeg" alt="Two Wheeler">
+                <p>Two Wheeler (₹0.2)</p>
+                <button onclick="addVehicle('twoWheeler')">+</button>
+            </div>
+            <div class="vehicle" id="four-wheeler">
+                <img src="Four Wheeral.jpeg" alt="Four Wheeler">
+                <button onclick="addVehicle('fourWheeler')">-</button>
+                <p>Four Wheeler (₹0.1)</p>
+                <button onclick="addVehicle('fourWheeler')">+</button>
+            </div>
+            <div class="vehicle" id="taxi">
+                <img src="taxi.jpeg" alt="Taxi">
+                <p>Taxi (₹0.1)</p>
+                <button onclick="addVehicle('taxi')">+</button>
+            </div>
+            <div class="vehicle" id="bus">
+                <img src="Bus.jpeg" alt="Bus/Heavy Vehicle">
+                <p>Bus/Heavy Vehicle (₹0.1)</p>
+                <button onclick="addVehicle('bus')">+</button>
+            </div>
+        </div>
+        <div class="summary">
+            <h3>Full Day (₹0.1)</h3>
+            <p>Two Wheeler: <span id="twoWheelerCount">0</span> ₹<span id="twoWheelerCost">0.00</span></p>
+            <p>Four Wheeler: <span id="fourWheelerCount">0</span> ₹<span id="fourWheelerCost">0.00</span></p>
+            <p>Taxi: <span id="taxiCount">0</span> ₹<span id="taxiCost">0.00</span></p>
+            <p>Bus/Heavy Vehicle: <span id="busCount">0</span> ₹<span id="busCost">0.00</span></p>
+            <p>Full Day: <span id="fullDayCount">0</span> ₹<span id="fullDayCost">0.00</span></p>
+            <h3>Total: ₹<span id="totalCost">0.00</span></h3>
+            <button onclick="payNow()">Pay ₹<span id="payAmount">0.00</span></button>
+        </div>
+    </div>
+    <script src="script3.js"></script>
+</body>
+</html>
