@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Alert Box</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <div class="alert-box">
+            <h2>Read the instructions carefully.</h2>
+            <ol>
+                <li>Instructions are configurable and fully dynamic</li>
+                <li>They are useful to ensure your brand safety and management</li>
+                <li>Like every other part of this demo, they can be turned OFF completely!</li>
+                <li>If instructions are available, a user must agree to proceed!</li>
+            </ol>
+            <label>
+                <input type="checkbox" id="agreeCheckbox"> I agree to the instructions
+            </label>
+            <button id="agreeButton" disabled>Agree and Continue</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
