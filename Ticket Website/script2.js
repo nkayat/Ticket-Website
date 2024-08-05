@@ -40,16 +40,16 @@ document.querySelectorAll('.add-btn, .coin').forEach(button => {
         summaryList[type].count = count;
         summaryList[type].total = (count * price).toFixed(2);
         summaryList[type].elementCount.textContent = count;
-        summaryList[type].elementTotal.textContent = `₹${summaryList[type].total}`;
+        summaryList[type].elementTotal.textContent = `$${summaryList[type].total}`;
 
         let totalAmount = Object.values(summaryList).reduce((sum, item) => sum + parseFloat(item.total), 0).toFixed(2);
-        totalAmountElement.textContent = `₹${totalAmount}`;
+        totalAmountElement.textContent = `$${totalAmount}`;
         payAmountElement.textContent = totalAmount;
     });
 });
 
 function payNow() {
-    alert('Payment of ₹' + payAmountElement.textContent + ' successful!');
+    alert('Payment of $' + payAmountElement.textContent + ' successful!');
 }
 
 
