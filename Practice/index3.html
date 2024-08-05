@@ -56,25 +56,40 @@
   <title>Button Click Example</title>
 </head>
 <body>
-  <!-- Slides -->
-  <div id="slide1" class="slide">This is Slide 1</div>
-  <div id="slide2" class="slide" style="display:none;">This is Slide 2</div>
-  <p>nitin kayat</p>
+  <!-- Slide 1 with Input -->
+  <div id="slide1" class="slide">
+    This is Slide 1
+    <br>
+    <label for="totalAmount">Total Amount:</label>
+    <input type="text" id="totalAmount">
+  </div>
+  
+  <!-- Slide 2 -->
+  <div id="slide2" class="slide" style="display:none;">
+    This is Slide 2
+  </div>
+  
   <!-- Button -->
   <button id="nextSlideButton">Next Slide</button>
 
   <script>
     // Get the elements
     const nextSlideButton = document.getElementById('nextSlideButton');
+    const totalAmountInput = document.getElementById('totalAmount');
     const slide1 = document.getElementById('slide1');
     const slide2 = document.getElementById('slide2');
 
     // Add event listener to the button
     nextSlideButton.addEventListener('click', () => {
-      // Hide Slide 1
-      slide1.style.display = 'none';
-      // Show Slide 2
-      slide2.style.display = 'block';
+      // Check if total amount is not blank
+      if (totalAmountInput.value.trim() === '') {
+        alert('Total Amount cannot be blank!');
+      } else {
+        // Hide Slide 1
+        slide1.style.display = 'none';
+        // Show Slide 2
+        slide2.style.display = 'block';
+      }
     });
   </script>
 </body>
