@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const agreeButton = document.getElementById('agreeButton');
 
     agreeCheckbox.addEventListener('change', () => {
-        agreeButton.disabled = !agreeCheckbox.checked;
+        agreeButton.disabled = !agreeCheckbox.click;
     });
 
     agreeButton.addEventListener('click', () => {
-        overlay.style.display = '';
+        overlay.style.display = 'none';
     });
 });

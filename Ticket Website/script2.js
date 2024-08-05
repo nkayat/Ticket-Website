@@ -19,6 +19,9 @@ const summaryList = {
 
 const totalAmountElement = document.getElementById('total-amount');
 const payAmountElement = document.getElementById('payAmount');
+const clickPayAmount = document.getElementById('fullPage');
+const clickPayAmount2 = document.getElementById('fullPage2');
+
 
 document.querySelectorAll('.add-btn, .coin').forEach(button => {
     button.addEventListener('click', () => {
@@ -48,3 +51,21 @@ document.querySelectorAll('.add-btn, .coin').forEach(button => {
 function payNow() {
     alert('Payment of ₹' + payAmountElement.textContent + ' successful!');
 }
+
+payAmountElement.addEventListener('change',()=>{
+    
+        
+    fullPage.style.display = !'none';
+        
+    fullPage2.style.display = 'block';
+      });
+
+
+
+// agreeCheckbox.addEventListener('change', () => {
+//     agreeButton.disabled = !agreeCheckbox.checked;
+// });
+
+// agreeButton.addEventListener('click', () => {
+//     overlay.style.display = 'none';
+// });
