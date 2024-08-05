@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     agreeButton.addEventListener('click', () => {
-        overlay.style.display = 'none';
+        overlay.style.display = '';
     });
 });
