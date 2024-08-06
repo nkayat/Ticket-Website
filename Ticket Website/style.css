@@ -166,7 +166,7 @@ margin-right: 5.8rem;
   justify-content: space-between;
   align-items: center;
   margin-top: -55.5px;
-  margin-left: 15.5rem;
+  margin-left: 14.7rem;
 }
 
 .coin {
@@ -185,12 +185,13 @@ margin-right: 5.8rem;
   background-color: #f8f807;
   border: none;
   color: rgb(254, 6, 6);
-  padding: 6px;
+  /* padding: 6px; */
+  padding-left: 7px;
   margin-left: 1rem;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 10px;
+  font-size: 14.5px;
   cursor: pointer;
   border-radius: 50%;
 }
@@ -198,12 +199,12 @@ margin-right: 5.8rem;
   background-color: #4caf50;
   border: none;
   color: white;
-  padding: 6px;
+  /* padding: 6px; */
   margin-right: 8rem;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 10px;
+  font-size: 14.5px;
   cursor: pointer;
   border-radius: 50%;
 }
@@ -270,7 +271,7 @@ margin-right: 5.8rem;
   border: none;
   padding: 10px;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 45%;
   margin-left: 12.8rem;
 }
