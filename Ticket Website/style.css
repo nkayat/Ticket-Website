@@ -5,7 +5,7 @@ html {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 header {
@@ -121,7 +121,8 @@ h4 {
 }
 b {
   /* margin-left: -6.1rem; */
-  margin-right: 10rem;
+  margin-right: 9rem;
+  font-size: 19px;
   /* margin-top: -2rem; */
   color: rgb(248, 248, 250);
 }
@@ -134,6 +135,9 @@ b {
   margin-top: -1.5rem;
 }
 
+#Truck img{
+  margin-left: 1rem;
+}
 
 #Taxi h4 b{
   margin-right: 14.5rem;
@@ -141,13 +145,13 @@ b {
 }
 
 #Bus h4 b{
- margin-right: 6.8rem;
+ margin-right: 5.3rem;
 }
-#Truck h4 b{
-  margin-right: 7.7rem;
+#Truck1 h4 b{
+  margin-right: 6rem;
 }
 #Construction h4 b{
-margin-right: 6.8rem;
+margin-right: 5.8rem;
 }
 
 
@@ -162,7 +166,7 @@ margin-right: 6.8rem;
   justify-content: space-between;
   align-items: center;
   margin-top: -55.5px;
-  margin-left: 14.5rem;
+  margin-left: 15.5rem;
 }
 
 .coin {
@@ -266,7 +270,7 @@ margin-right: 6.8rem;
   border: none;
   padding: 10px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 20px;
   width: 45%;
   margin-left: 12.8rem;
 }
