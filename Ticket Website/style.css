@@ -230,6 +230,13 @@ b {
   margin-top: 20px;
 }
 
+.summary p{
+  font-size: 13px;
+  padding-top:1rem;
+  color: rgb(213, 213, 45);
+ margin-bottom: -2rem;
+}
+
 .summary button {
   background-color: #4caf50;
   color: white;
@@ -237,7 +244,8 @@ b {
   padding: 10px;
   cursor: pointer;
   border-radius: 4px;
-  width: 100%;
+  width: 45%;
+  margin-left: 12.8rem;
 }
 
 .summary button:hover {
