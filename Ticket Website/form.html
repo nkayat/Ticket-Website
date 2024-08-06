@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fill Form</title>
-    <link rel="stylesheet" href="form.style">
+    <title>Form Example</title>
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
-      <form action="/">
-     
-        <div class="Box">
-           <div class="inputbox">
-            <h3>Pax 1 Details</h3>
-            <input type="text"  placeholder="enter your name">
-            <input type="text" placeholder="enter your age">
-           </div>
-        </div>
-
-      </form>
+    <div class="form-container">
+        <form id="pax-form">
+            <div class="pax-details">
+                <div class="pax">
+                    <label for="fullName1"></label>
+                    <input type="text" id="fullName1" placeholder="Enter Full Name" name="fullName1">
+                    <label for="age1"></label>
+                    <input type="number" id="age1" name="age1" placeholder="Enter Age">
+                </div>
+                <div class="pax">
+                    <label for="fullName2"></label>
+                    <input type="text" id="fullName2" name="fullName2" placeholder="Enter Full Name">
+                    <label for="age2"></label>
+                    <input type="number" id="age2" name="age2" placeholder="Enter Age">
+                </div>
+            </div>
+            <a href=""><button type="button" onclick="continueForm()">Continue</button></a>
+        </form>
+    </div>
+    <script src="form.js"></script>
 </body>
 </html>
