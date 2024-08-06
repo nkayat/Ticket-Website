@@ -94,8 +94,8 @@ img {
 }
 
 .card img {
-  width: auto;
-  /* height: auto; */
+  width: 100%;
+  height: 100%;
 }
 .card .truck img {
   height: 15rem;
@@ -165,8 +165,8 @@ margin-right: 5.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: -55.5px;
-  margin-left: 14.7rem;
+  margin-top: -51.5px;
+  margin-left: 240.7px;
 }
 
 .coin {
@@ -176,8 +176,8 @@ margin-right: 5.8rem;
 }
 
 .count {
-  font-size: 1.5em;
-  margin: 0.5rem;
+  font-size: 1.4em;
+  margin: 0.3rem;
   color: #ffffff;
 }
 
