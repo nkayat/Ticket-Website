@@ -117,7 +117,8 @@ img {
   margin-left: -3rem;
 }
 h4 {
-  margin-top: -2rem;
+  /* margin-top: 11%; */
+margin: -11%;
 }
 b {
   /* margin-left: -6.1rem; */
@@ -136,7 +137,7 @@ b {
 }
 
 #Truck img{
-  margin-left: 1rem;
+  margin-left: 0rem;
 }
 
 #Taxi h4 b{
@@ -151,7 +152,9 @@ b {
   margin-right: 6rem;
 }
 #Construction h4 b{
-margin-right: 5.8rem;
+margin-right: 15.3rem;
+margin-left: -8rem;
+padding-right: 1rem;
 }
 
 
@@ -165,7 +168,7 @@ margin-right: 5.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: -51.5px;
+  margin-top: 2.3%;
   margin-left: 240.7px;
 }
 
