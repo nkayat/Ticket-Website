@@ -63,6 +63,8 @@ section {
 img {
   width: 92.7rem;
   height: 15rem;
+  background-size: cover;
+  background-position: center;
 }
 
 .content {
