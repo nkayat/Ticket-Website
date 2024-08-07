@@ -152,7 +152,7 @@ b {
   margin-left: -8rem;
   padding-right: 1rem;
   position: relative;
-  top: -1em;
+  top: -25px;
 }
 #Truck1 h4 b{
   margin-right: 7.3rem;
@@ -162,17 +162,17 @@ margin-right: 15.3rem;
 margin-left: -8rem;
 padding-right: 1rem;
 position: relative;
-top: -1em;
+top: -25px;
 }
 
 
 #Bus1{
       position: relative;
-    top: -21px;
+    top: -25px;
 }
 #Jcb1{
   position: relative;
-  top: -21px;
+  top: -25px;
 }
 
 
