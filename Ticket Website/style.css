@@ -118,7 +118,7 @@ img {
 }
 h4 {
   /* margin-top: 11%; */
-margin: -11%;
+margin: -11% 8px;
 }
 b {
   /* margin-left: -6.1rem; */
@@ -146,7 +146,11 @@ b {
 }
 
 #Bus h4 b{
- margin-right: 5.3rem;
+  margin-right: 15.3rem;
+  margin-left: -8rem;
+  padding-right: 1rem;
+  position: relative;
+  top: -1em;
 }
 #Truck1 h4 b{
   margin-right: 7.3rem;
@@ -155,6 +159,18 @@ b {
 margin-right: 15.3rem;
 margin-left: -8rem;
 padding-right: 1rem;
+position: relative;
+top: -1em;
+}
+
+
+#Bus1{
+      position: relative;
+    top: -21px;
+}
+#Jcb1{
+  position: relative;
+  top: -21px;
 }
 
 
