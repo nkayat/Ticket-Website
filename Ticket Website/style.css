@@ -155,7 +155,18 @@ b {
   top: -25px;
 }
 #Truck1 h4 b{
-  margin-right: 7.3rem;
+  margin-right: 4.3rem;
+  margin-left: -19rem;
+  /* padding-right: 2rem; */
+  padding: 199px;
+  position: relative;
+  top: -25px;
+}
+#Heavy{
+  /* position: relative;
+  margin-top: -3rem; */
+  position: relative;
+  top: -25px;
 }
 #Construction h4 b{
 margin-right: 15.3rem;
@@ -186,8 +197,8 @@ top: -25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2.3%;
-  margin-left: 240.7px;
+  margin-top: 13px;
+  margin-left: 200.7px;
 }
 
 .coin {
@@ -198,7 +209,8 @@ top: -25px;
 
 .count {
   font-size: 1.4em;
-  margin: 0.3rem;
+  margin-left: 24px;
+  margin-right: 24px;
   color: #ffffff;
 }
 
