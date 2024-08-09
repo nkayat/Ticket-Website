@@ -384,7 +384,11 @@ top: -25px;
   }
 
   h4, b {
-    font-size: 16px;
+    font-size: 61px;
+    position: relative;
+    top: -1rem;
+    margin-right: 20rem;
+left: -1rem;
   }
 
   .info {
