@@ -1,89 +1,473 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parking Lot</title>
-    <link rel="stylesheet" href="style3.css">
-</head>
-<body>
-    <div class="container">
-        <div class="parking-lot">
-            <div class="vehicle" id="two-wheeler">
-                <img src="download (2).jpeg" alt="Two Wheeler">
-                <p>Two Wheeler (₹0.2)</p>
-                <button onclick="addVehicle('twoWheeler')">+</button>
-            </div>
-            <div class="vehicle" id="four-wheeler">
-                <img src="Four Wheeral.jpeg" alt="Four Wheeler">
-                <button onclick="addVehicle('fourWheeler')">-</button>
-                <p>Four Wheeler (₹0.1)</p>
-                <button onclick="addVehicle('fourWheeler')">+</button>
-            </div>
-            <div class="vehicle" id="taxi">
-                <img src="taxi.jpeg" alt="Taxi">
-                <p>Taxi (₹0.1)</p>
-                <button onclick="addVehicle('taxi')">+</button>
-            </div>
-            <div class="vehicle" id="bus">
-                <img src="Bus.jpeg" alt="Bus/Heavy Vehicle">
-                <p>Bus/Heavy Vehicle (₹0.1)</p>
-                <button onclick="addVehicle('bus')">+</button>
-            </div>
-        </div>
-        <div class="summary">
-            <h3>Full Day (₹0.1)</h3>
-            <p>Two Wheeler: <span id="twoWheelerCount">0</span> ₹<span id="twoWheelerCost">0.00</span></p>
-            <p>Four Wheeler: <span id="fourWheelerCount">0</span> ₹<span id="fourWheelerCost">0.00</span></p>
-            <p>Taxi: <span id="taxiCount">0</span> ₹<span id="taxiCost">0.00</span></p>
-            <p>Bus/Heavy Vehicle: <span id="busCount">0</span> ₹<span id="busCost">0.00</span></p>
-            <p>Full Day: <span id="fullDayCount">0</span> ₹<span id="fullDayCost">0.00</span></p>
-            <h3>Total: ₹<span id="totalCost">0.00</span></h3>
-            <button onclick="payNow()">Pay ₹<span id="payAmount">0.00</span></button>
-        </div>
-    </div>
-    <script src="script3.js"></script>
-</body>
-</html> -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Slider</title>
-    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Parking/Counter Website</title>
+   <style>
+body,
+html {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Header styling */
+header {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  float: left;
+  padding: 15px;
+  font-size: 20px;
+}
+
+header nav {
+  float: right;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  background-color: #575757;
+}
+
+main {
+  padding: 20px;
+  margin-top: 50px; /* Adjusted to avoid overlap with fixed header */
+}
+
+section {
+  padding: 33px 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1200px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  flex: 3;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  padding: 0px;
+}
+
+h4 {
+  margin: 10px 0;
+}
+
+b {
+  font-size: 19px;
+  color: rgb(248, 248, 250);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 13px;
+}
+
+.coin,
+.add-btn {
+  font-size: 1.5em;
+  background-color: #f8f807;
+  border: none;
+  color: rgb(254, 6, 6);
+  text-align: center;
+  display: inline-block;
+  font-size: 14.5px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.add-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.summary {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  flex: 1;
+}
+
+.summary h4 {
+  margin: 0 0 10px;
+}
+
+.summary .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.summary-list li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.summary p {
+  font-size: 13px;
+  padding-top: 1rem;
+  color: rgb(213, 213, 45);
+}
+
+.summary button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.summary button:hover {
+  background-color: #45a049;
+}
+
+/* Media Queries for Responsiveness */
+
+@media screen and (max-width: 768px) {
+  .header .logo {
+    font-size: 16px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav ul li {
+    width: 100%;
+  }
+
+  header nav ul li a {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .summary {
+    margin-top: 20px;
+  }
+
+  .summary button {
+    width: 100%;
+    margin: 10px 0 0;
+  }
+
+  .summary-list li span {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    width: 100%;
+  }
+
+  .summary button {
+    width: 100%;
+  }
+
+  .coin,
+  .add-btn {
+    font-size: 1.2em;
+  }
+
+  h4, b {
+    font-size: 16px;
+  }
+
+  .info {
+    flex-direction: column;
+  }
+
+  .summary-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .summary-list li span {
+    font-size: 12px;
+  }
+
+  .total {
+    font-size: 18px;
+  }
+}
+
+    
+   </style>
 </head>
-<body>
-    <div class="date-slider">
-        <div class="date-card" onclick="swapDate(0)">
-            <span class="week" id="week0">Sat</span>
-            <span class="month" id="month0">3 AUG</span>
+<body id="fullPage">
+    <header>
+        <div class="logo">Parking Platform Ticketing Demo</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="services">
+            <img src="download.jpeg" alt="Example Image">
+        </section>
+
+        <div class="content">
+            <div class="card-container">
+                <div class="card">
+                    <img src="download (2).jpeg" alt="Two Wheeler">
+                    <div class="container" id="Two Wheeler">
+                        <h4><b>Two Wheeler ($0.2)</b></h4>
+                        <div class="info">
+                            <button class="coin" data-type="Two Wheeler" data-price="0.2">-</button>
+                            <span class="count">0</span>
+                            <button class="add-btn" data-type="Two Wheeler" data-price="0.2">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Four Wheeral.jpeg" alt="Four Wheeler">
+                    <div class="container" id="Four Wheeler">
+                        <h4><b>Four Wheeler ($0.1)</b></h4>
+                        <div class="info">
+                            <button class="coin" data-type="Four Wheeler" data-price="0.1">-</button>
+                            <span class="count">0</span>
+                            <button class="add-btn" data-type="Four Wheeler" data-price="0.1">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="taxi.jpeg" alt="Taxi">
+                    <div class="container" id="Taxi">
+                        <h4><b>Taxi ($0.1)</b></h4>
+                        <div class="info">
+                            <button class="coin" data-type="Taxi" data-price="0.1">-</button>
+                            <span class="count">0</span>
+                            <button class="add-btn" data-type="Taxi" data-price="0.1">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Bus.jpeg" alt="Bus / Heavy Vehicle">
+                    <div class="container" id="Bus">
+                        <h4><b>Bus / Heavy Vehicle ($0.1)</b></h4>
+                        <div class="info" id="Bus1">
+                            <button class="coin" data-type="Bus / Heavy Vehicle" data-price="0.1">-</button>
+                            <span class="count">0</span>
+                            <button class="add-btn" data-type="Bus / Heavy Vehicle" data-price="0.1">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="Truck">
+                    <img   src="truck.jpg" alt="Truck / Loading Vehicle">
+                    <div class="container" id="Truck1">
+                        <h4><b>Truck / Loading Vehicle ($0.5)</b></h4>
+                        <div class="info" id="Heavy">
+                            <button class="coin" data-type="Truck / Loading Vehicle" data-price="0.5">-</button>
+                            <span class="count">0</span>
+                            <button class="add-btn" data-type="Truck / Loading Vehicle" data-price="0.5">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="JCB.jpeg" alt="Construction Vehicle">
+                    <div class="container" id="Construction">
+                        <h4><b>Construction Vehicle ($1.0)</b></h4>
+                        <div class="info" id="Jcb1">
+                            <button class="coin" data-type="Construction Vehicle" data-price="1.0">-</button>
+                            <span class="count">0</span>
+                            <button class="add-btn" data-type="Construction Vehicle" data-price="1.0">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary">
+                <h4>Full Day ($0.1)</h4>
+                <ul class="summary-list">
+                    <li>Two Wheeler <span id="two-wheeler-count">0</span> <span id="two-wheeler-total">$0.00</span></li>
+                    <li>Four Wheeler <span id="four-wheeler-count">0</span> <span id="four-wheeler-total">$0.00</span></li>
+                    <li>Taxi <span id="taxi-count">0</span> <span id="taxi-total">$0.00</span></li>
+                    <li>Bus / Heavy Vehicle <span id="bus-count">0</span> <span id="bus-total">$0.00</span></li>
+                    <li>Truck / Loading Vehicle <span id="truck-count">0</span> <span id="truck-total">$0.00</span></li>
+                    <li>Construction Vehicle <span id="construction-count">0</span> <span id="construction-total">$0.00</span></li>
+                    <li>Full Day <span id="full-day-count">0</span> <span id="full-day-total">$0.00</span></li>
+                </ul>
+                <div class="total">Total <span id="total-amount">$0.00</span></div>
+                <p>Please see the Contity of Vehicle </p><a  href="alert.html"><button>Pay $<span id="payAmount">0.00</span></button></a>
+            </div>
         </div>
-        <div class="date-card selected" onclick="swapDate(1)">
-            <span class="week" id="week1">Sun</span>
-            <span class="month" id="month1">4 AUG</span>
-            <div class="indicator"></div>
-        </div>
-        <div class="date-card" onclick="swapDate(2)">
-            <span class="week" id="week2">Mon</span>
-            <span class="month" id="month2">5 AUG</span>
-        </div>
-        <div class="date-card" onclick="swapDate(3)">
-            <span class="week" id="week3">Tue</span>
-            <span class="month" id="month3">6 AUG</span>
-        </div>
-        <div class="date-card" onclick="swapDate(4)">
-            <span class="week" id="week4">Wed</span>
-            <span class="month" id="month4">7 AUG</span>
-        </div>
-        <div class="date-card" onclick="swapDate(5)">
-            <span class="week" id="week5">Thu</span>
-            <span class="month" id="month5">8 AUG</span>
-        </div>
-    </div>
-    <script src="script3.js"></script>
+    </main>
+    <script>
+
+
+
+
+
+window.onscroll = function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 0) {
+        header.classList.add('shadow');
+    } else {
+        header.classList.remove('shadow');
+    }
+};
+
+const summaryList = {
+    'Two Wheeler': { count: 0, total: 0.0, elementCount: document.getElementById('two-wheeler-count'), elementTotal: document.getElementById('two-wheeler-total') },
+    'Four Wheeler': { count: 0, total: 0.0, elementCount: document.getElementById('four-wheeler-count'), elementTotal: document.getElementById('four-wheeler-total') },
+    'Taxi': { count: 0, total: 0.0, elementCount: document.getElementById('taxi-count'), elementTotal: document.getElementById('taxi-total') },
+    'Bus / Heavy Vehicle': { count: 0, total: 0.0, elementCount: document.getElementById('bus-count'), elementTotal: document.getElementById('bus-total') },
+    'Truck / Loading Vehicle': { count: 0, total: 0.0, elementCount: document.getElementById('truck-count'), elementTotal: document.getElementById('truck-total') },
+    'Construction Vehicle': { count: 0, total: 0.0, elementCount: document.getElementById('construction-count'), elementTotal: document.getElementById('construction-total') },
+    'Full Day': { count: 0, total: 0.0, elementCount: document.getElementById('full-day-count'), elementTotal: document.getElementById('full-day-total') }
+};
+
+const totalAmountElement = document.getElementById('total-amount');
+const payAmountElement = document.getElementById('payAmount');
+const clickPayAmount = document.getElementById('fullPage');
+const clickPayAmount2 = document.getElementById('fullPage2');
+
+
+document.querySelectorAll('.add-btn, .coin').forEach(button => {
+    button.addEventListener('click', () => {
+        const countElement = button.parentElement.querySelector('.count');
+        let count = parseInt(countElement.textContent, 10);
+        const price = parseFloat(button.dataset.price);
+        const type = button.dataset.type;
+
+        if (button.classList.contains('add-btn')) {
+            count += 1;
+        } else {
+            count = Math.max(0, count - 1); // Prevent negative counts
+        }
+
+        countElement.textContent = count;
+        summaryList[type].count = count;
+        summaryList[type].total = (count * price).toFixed(2);
+        summaryList[type].elementCount.textContent = count;
+        summaryList[type].elementTotal.textContent = `$${summaryList[type].total}`;
+
+        let totalAmount = Object.values(summaryList).reduce((sum, item) => sum + parseFloat(item.total), 0).toFixed(2);
+        totalAmountElement.textContent = `$${totalAmount}`;
+        payAmountElement.textContent = totalAmount;
+    });
+});
+
+function payNow() {
+    alert('Payment of $' + payAmountElement.textContent + ' successful!');
+}
+
+
+
+
+
+
+    </script>
 </body>
 </html>

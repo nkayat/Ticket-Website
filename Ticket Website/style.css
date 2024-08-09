@@ -313,3 +313,94 @@ top: -25px;
 .summary button:hover {
   background-color: #45a049;
 }
+
+@media screen and (max-width: 768px) {
+  .header .logo {
+    font-size: 16px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav ul li {
+    width: 100%;
+  }
+
+  header nav ul li a {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .summary {
+    margin-top: 20px;
+  }
+
+  .summary button {
+    width: 100%;
+    margin: 10px 0 0;
+  }
+
+  .summary-list li span {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+  header nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .summary {
+    width: 100%;
+  }
+
+  .summary button {
+    width: 100%;
+  }
+
+  .coin,
+  .add-btn {
+    font-size: 1.2em;
+  }
+
+  h4, b {
+    font-size: 16px;
+  }
+
+  .info {
+    flex-direction: column;
+  }
+
+  .summary-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .summary-list li span {
+    font-size: 12px;
+  }
+
+  .total {
+    font-size: 18px;
+  }
+}
