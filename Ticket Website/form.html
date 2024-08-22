@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Example</title>
+    <title>Passenger Details Form</title>
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
     <div class="form-container">
-        <form id="pax-form">
-            <div class="pax-details">
-                <div class="pax">
-                    <label for="fullName1"></label>
-                    <input type="text" id="fullName1" placeholder="Enter Full Name" name="fullName1">
-                    <label for="age1"></label>
-                    <input type="number" id="age1" name="age1" placeholder="Enter Age">
+        <form id="passengerForm">
+            <div class="passenger-section">
+                <div class="passenger-details">
+                    <h3>PAX 1 DETAILS</h3>
+                    <input type="text" name="fullName1" placeholder="Full Name" required>
+                    <input type="number" name="age1" placeholder="Age" required>
                 </div>
-                <div class="pax">
-                    <label for="fullName2"></label>
-                    <input type="text" id="fullName2" name="fullName2" placeholder="Enter Full Name">
-                    <label for="age2"></label>
-                    <input type="number" id="age2" name="age2" placeholder="Enter Age">
+                <div class="passenger-details">
+                    <h3>PAX 2 DETAILS</h3>
+                    <input type="text" name="fullName2" placeholder="Full Name" required>
+                    <input type="number" name="age2" placeholder="Age" required>
                 </div>
             </div>
-            <a href=""><button type="button" onclick="continueForm()">Continue</button></a>
+            <div class="button-container">
+                <button type="button" onclick="closeForm()">Close</button>
+                <button type="submit">Continue</button>
+            </div>
         </form>
     </div>
+
     <script src="form.js"></script>
 </body>
 </html>

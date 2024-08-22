@@ -1,9 +1,12 @@
-const continueFirst=document.getElementById("fullName2")
-function continueForm() {
-    if(continueFirst==''){
-        alert("please fill the name first");
-    }
-    else{
-        alert("your data was saved");
-    }
+// const continueFirst=document.getElementById("fullName2")
+// function continueForm() {
+//     if(continueFirst==''){
+//         alert("please fill the name first");
+//     }
+//     else{
+//         alert("your data was saved");
+//     }
+// }
+function closeForm() {
+    document.getElementById('passengerForm').reset();
 }

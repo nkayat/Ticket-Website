@@ -1,74 +1,92 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Quicksand", sans-serif;
+    background-color: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    height: 43vh;
+    margin: 0;
 }
 
 .form-container {
-    background-color: white;
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 61%;
+    /* max-width: 600px; */
 }
 
-.steps {
-    list-style: none;
+.passenger-section {
     display: flex;
     justify-content: space-between;
-    padding: 0;
-    margin-bottom: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.steps li {
-    flex-grow: 1;
-    text-align: center;
+.passenger-details {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.passenger-details h3 {
+    position: relative;
+    font-size: 12px;
+    top: -26px;
     padding: 10px;
-    border-bottom: 2px solid #ccc;
-    color: #888;
+    left: -10px;
+    color: #84867a;
 }
 
-.steps li.active {
-    border-bottom: 2px solid #007bff;
-    color: #007bff;
-}
-
-.pax-details {
-    display: flex;
-    justify-content: space-between;
-}
-
-.pax {
-    width: 45%;
-}
-
-.pax label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.pax input {
+input[type="text"],
+input[type="number"] {
     width: 100%;
-    padding: 8px;
+    padding: 18px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 26em;
 }
 
 button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
+button[type="button"] {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid lightgray;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
 button:hover {
-    background-color: #0056b3;
+    opacity: 0.9;
+}
+
+@media (max-width: 100%) {
+    .passenger-section {
+        flex-direction: column;
+    }
+
+    .button-container {
+        justify-content: space-between;
+    }
 }
