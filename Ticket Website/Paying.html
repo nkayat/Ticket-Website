@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 500px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            font-weight: bold;
+        }
+        .total-row td {
+            font-weight: bold;
+        }
+        .otp-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .otp-section input[type="text"] {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .otp-section .verify-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .otp-section .verify-btn:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+        .pay-btn {
+            display: block;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+        .pay-btn:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+    </style>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Verify & Pay</h2>
+    
+    <!-- Table for items and prices -->
+    <div class="summary">
+        <h4>Full Day</h4>
+        <ul class="summary-list">
+            <li>Two Wheeler <span id="two-wheeler-count">0</span> <span id="two-wheeler-total">₹000</span></li>
+            <li>Four Wheeler <span id="four-wheeler-count">0</span> <span id="four-wheeler-total">₹000</span></li>
+            <li>Taxi <span id="taxi-count">0</span> <span id="taxi-total">₹000</span></li>
+            <li>Bus / Heavy Vehicle <span id="bus-count">0</span> <span id="bus-total">₹000</span></li>
+            <li>Truck / Loading Vehicle <span id="truck-count">0</span> <span id="truck-total">₹000</span></li>
+            <li>Construction Vehicle <span id="construction-count">0</span> <span id="construction-total">₹000</span></li>
+            <li>Full Day <span id="full-day-count">0</span> <span id="full-day-total">₹000</span></li>
+        </ul>
+        <div class="total">Total <span id="total-amount">₹000</span></div>
+        <p>Please see the Contity of Vehicle </p><a  href="alert.html"></a>
+    </div>
+    
+    <!-- Mobile number and OTP verification -->
+    <h2>Verify mobile number</h2>
+    <p>Please verify your mobile phone number to receive your tickets and important updates about your bookings.</p>
+    
+    <div class="otp-section">
+        <input type="text" id="mobileNumber"  >
+        <button onclick="editMobile()" id="editBtn">Edit</button>
+    </div>
+    
+    <div class="otp-section">
+        <input type="text" id="otpInput" placeholder="Enter OTP">
+        <button onclick="verifyOTP()" class="verify-btn" id="verifyBtn">Verify</button>
+    </div>
+
+    <!-- Pay button -->
+    <button class="pay-btn" id="payBtn" disabled>Pay</button>

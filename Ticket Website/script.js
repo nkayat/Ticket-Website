@@ -8,13 +8,13 @@ window.onscroll = function() {
 };
 
 const summaryList = {
-    'Two Wheeler': { count: 0, total: 0.0, elementCount: document.getElementById('two-wheeler-count'), elementTotal: document.getElementById('two-wheeler-total') },
-    'Four Wheeler': { count: 0, total: 0.0, elementCount: document.getElementById('four-wheeler-count'), elementTotal: document.getElementById('four-wheeler-total') },
-    'Taxi': { count: 0, total: 0.0, elementCount: document.getElementById('taxi-count'), elementTotal: document.getElementById('taxi-total') },
-    'Bus / Heavy Vehicle': { count: 0, total: 0.0, elementCount: document.getElementById('bus-count'), elementTotal: document.getElementById('bus-total') },
-    'Truck / Loading Vehicle': { count: 0, total: 0.0, elementCount: document.getElementById('truck-count'), elementTotal: document.getElementById('truck-total') },
-    'Construction Vehicle': { count: 0, total: 0.0, elementCount: document.getElementById('construction-count'), elementTotal: document.getElementById('construction-total') },
-    'Full Day': { count: 0, total: 0.0, elementCount: document.getElementById('full-day-count'), elementTotal: document.getElementById('full-day-total') }
+    'Two Wheeler': { count: 0, total: 00, elementCount: document.getElementById('two-wheeler-count'), elementTotal: document.getElementById('two-wheeler-total') },
+    'Four Wheeler': { count: 0, total: 00, elementCount: document.getElementById('four-wheeler-count'), elementTotal: document.getElementById('four-wheeler-total') },
+    'Taxi': { count: 0, total: 00, elementCount: document.getElementById('taxi-count'), elementTotal: document.getElementById('taxi-total') },
+    'Bus / Heavy Vehicle': { count: 0, total: 00, elementCount: document.getElementById('bus-count'), elementTotal: document.getElementById('bus-total') },
+    'Truck / Loading Vehicle': { count: 0, total: 00, elementCount: document.getElementById('truck-count'), elementTotal: document.getElementById('truck-total') },
+    'Construction Vehicle': { count: 0, total: 00, elementCount: document.getElementById('construction-count'), elementTotal: document.getElementById('construction-total') },
+    'Full Day': { count: 0, total: 00, elementCount: document.getElementById('full-day-count'), elementTotal: document.getElementById('full-day-total') }
 };
 
 const totalAmountElement = document.getElementById('total-amount');
@@ -40,16 +40,16 @@ document.querySelectorAll('.add-btn, .coin').forEach(button => {
         summaryList[type].count = count;
         summaryList[type].total = (count * price).toFixed(2);
         summaryList[type].elementCount.textContent = count;
-        summaryList[type].elementTotal.textContent = `$${summaryList[type].total}`;
+        summaryList[type].elementTotal.textContent = `₹${summaryList[type].total}`;
 
         let totalAmount = Object.values(summaryList).reduce((sum, item) => sum + parseFloat(item.total), 0).toFixed(2);
-        totalAmountElement.textContent = `$${totalAmount}`;
+        totalAmountElement.textContent = `₹${totalAmount}`;
         payAmountElement.textContent = totalAmount;
     });
 });
 
 function payNow() {
-    alert('Payment of $' + payAmountElement.textContent + ' successful!');
+    alert('Payment of ₹' + payAmountElement.textContent + ' successful!');
 }
 
 
